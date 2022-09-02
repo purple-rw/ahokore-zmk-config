@@ -42,10 +42,12 @@
 
 &mt {
     quick-tap-ms = <200>;
-}
+};
+
 &lt {
     quick-tap-ms = <200>;
-}
+};
+
 
 / {
     behaviors {
