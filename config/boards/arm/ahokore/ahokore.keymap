@@ -40,15 +40,23 @@
         bindings = <&macro_release &kp LSHFT>, <&macro_tap key>, <&macro_press &kp LSHFT>; \
     )
 
+&mt {
+    quick-tap-ms = <200>;
+}
+&lt {
+    quick-tap-ms = <200>;
+}
+
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping_term_ms = <300>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
+            tapping_term_ms = <250>;
+            quick_tap_ms = <250>;
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
 
