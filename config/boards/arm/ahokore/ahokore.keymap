@@ -15,10 +15,11 @@
 #define CANRY 3     // alphas (Canary)
 #define SYMBL 4     // symbols
 #define NUMRW 5     // number row
-#define LOWER 6     // functions & keypad
-#define FN2   7     // functions2
-#define RAISE 8     // multimedia & navigation
-#define ADJST 9     // bluetooth
+#define NUMRX 6     // number row (shifted)
+#define LOWER 7     // functions & keypad
+#define FN2   8     // functions2
+#define RAISE 9     // multimedia & navigation
+#define ADJST 10    // bluetooth
 
 // Special keys
 #define ZOOMOUT      LA(LG(MINUS))
@@ -31,6 +32,13 @@
 #define M_TMUX       LC(T)
 #define NON_US_TILDE LS(NON_US_HASH)
 #define NON_US_PIPE  LS(NON_US_BSLH)
+
+#define NUMROW_MACRO(name, key) \
+    ZMK_MACRO(name, \
+        wait-ms = <30>; \
+        tap-ms = <30>; \
+        bindings = <&macro_release &kp LSHFT>, <&macro_tap key>, <&macro_press &kp LSHFT>; \
+    )
 
 / {
     behaviors {
@@ -48,7 +56,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "SYMBOL_NUMROW";
             #binding-cells = <0>;
-            bindings = <&lt SYMBL SPACE>, <&lt NUMRW SPACE>;
+            bindings = <&lt SYMBL SPACE>, <&lt NUMRX SPACE>;
             mods = <(MOD_LSFT)>;
         };
 
@@ -69,6 +77,27 @@
                 layers = <BASE QWRTY HNDDN CANRY>;
             };
         };
+    };
+
+    macros {
+        NUMROW_MACRO(num0, &kp N0)
+        NUMROW_MACRO(num1, &kp N1)
+        NUMROW_MACRO(num2, &kp N2)
+        NUMROW_MACRO(num3, &kp N3)
+        NUMROW_MACRO(num4, &kp N4)
+        NUMROW_MACRO(num5, &kp N5)
+        NUMROW_MACRO(num6, &kp N6)
+        NUMROW_MACRO(num7, &kp N7)
+        NUMROW_MACRO(num8, &kp N8)
+        NUMROW_MACRO(num9, &kp N9)
+        NUMROW_MACRO(symequal, &kp EQUAL)
+        NUMROW_MACRO(symminus, &kp MINUS)
+        NUMROW_MACRO(symsemi,  &kp SEMI)
+        NUMROW_MACRO(symcomma, &kp COMMA)
+        NUMROW_MACRO(symdot,   &kp DOT)
+        NUMROW_MACRO(symfslh,  &kp FSLH)
+        NUMROW_MACRO(symxhash, &kp NON_US_HASH)
+        NUMROW_MACRO(symxbslh, &kp NON_US_BSLH)
     };
 
     keymap {
@@ -195,6 +224,15 @@
    &kp N9    &kp N5    &kp N3    &kp N1    &kp N7           &kp N6          &kp N0    &kp N2    &kp N4    &kp N8
    &kp EQUAL &kp MINUS &kp PLUS  &kp STAR  &kp NON_US_PIPE  &kp NON_US_BSLH &kp SEMI  &kp COMMA &kp DOT   &kp FSLH
                        &trans    &trans    &trans           &trans          &trans    &trans
+            >;
+        };
+
+        numberrowx_layer {
+            bindings = <
+   &trans    &trans    &trans    &trans    &kp NON_US_TILDE &symxhash &trans    &trans    &trans    &trans
+   &num9     &num5     &num3     &num1     &num7            &num6     &num0     &num2     &num4     &num8
+   &symequal &symminus &kp PLUS  &kp STAR  &kp NON_US_PIPE  &symxbslh &symsemi  &symcomma &symdot   &symfslh
+                       &trans    &trans    &trans           &trans    &trans    &trans
             >;
         };
 
