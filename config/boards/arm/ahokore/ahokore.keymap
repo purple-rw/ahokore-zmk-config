@@ -47,7 +47,7 @@
         symnum: symbol_numrow {
             compatible = "zmk,behavior-mod-morph";
             label = "SYMBOL_NUMROW";
-            #binding-cells = <33>;
+            #binding-cells = <0>;
             bindings = <&lt SYMBL SPACE>, <&lt NUMRW SPACE>;
             mods = <(MOD_LSFT)>;
         };
@@ -90,10 +90,10 @@
 // ------------| Esc | Tab |BkSpc|     |Space|Enter| Tmux|------------
 //             -------------------     -------------------
             bindings = <
-    &kp Q       &kp W      &kp F         &kp P         &kp B          &kp J           &kp L       &kp U           &kp Y      &kp SEMI
-    &hm LCTRL A &hm LALT R &hm LGUI S    &hm LSFT T    &kp G          &kp M           &hm RSFT N  &hm RGUI E      &hm RALT I &hm RCTRL O
-    &kp Z       &kp X      &kp C         &kp D         &kp V          &kp K           &kp H       &kp COMMA       &kp DOT    &kp FSLH
-                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &lt SYMBL SPACE &symnum     &mt LALT M_TMUX
+    &kp Q       &kp W      &kp F         &kp P         &kp B          &kp J   &kp L           &kp U           &kp Y      &kp SEMI
+    &hm LCTRL A &hm LALT R &hm LGUI S    &hm LSFT T    &kp G          &kp M   &hm RSFT N      &hm RGUI E      &hm RALT I &hm RCTRL O
+    &kp Z       &kp X      &kp C         &kp D         &kp V          &kp K   &kp H           &kp COMMA       &kp DOT    &kp FSLH
+                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &symnum &lt RAISE ENTER &mt LALT M_TMUX
             >;
         };
 
@@ -113,10 +113,10 @@
 // ------------| Esc | Tab |BkSpc|     |Space|Enter| Tmux|------------
 //             -------------------     -------------------
             bindings = <
-    &kp Q       &kp W      &kp E         &kp R         &kp T          &kp Y           &kp U           &kp I           &kp O      &kp P
-    &hm LCTRL A &hm LALT S &hm LGUI D    &hm LSFT F    &kp G          &kp H           &hm RSFT J      &hm RGUI K      &hm RALT L &hm RCTRL SEMI
-    &kp Z       &kp X      &kp C         &kp V         &kp B          &kp N           &kp M           &kp COMMA       &kp DOT    &kp FSLH
-                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &lt SYMBL SPACE &lt RAISE ENTER &mt LALT M_TMUX
+    &kp Q       &kp W      &kp E         &kp R         &kp T          &kp Y   &kp U           &kp I           &kp O      &kp P
+    &hm LCTRL A &hm LALT S &hm LGUI D    &hm LSFT F    &kp G          &kp H   &hm RSFT J      &hm RGUI K      &hm RALT L &hm RCTRL SEMI
+    &kp Z       &kp X      &kp C         &kp V         &kp B          &kp N   &kp M           &kp COMMA       &kp DOT    &kp FSLH
+                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &symnum &lt RAISE ENTER &mt LALT M_TMUX
             >;
         };
 
@@ -136,10 +136,10 @@
 // ------------| Esc | Tab |BkSpc|     |Space|Enter| Tmux|------------
 //             -------------------     -------------------
             bindings = <
-    &kp W       &kp F      &kp M         &kp P         &kp V          &kp FSLH        &kp DOT         &kp Q           &kp J      &kp Z
-    &hm LCTRL R &hm LALT S &hm LGUI N    &hm LSFT T    &kp G          &kp COMMA       &hm RSFT A      &hm RGUI E      &hm RALT I &hm RCTRL H
-    &kp X       &kp C      &kp L         &kp D         &kp B          &kp SEMI        &kp U           &kp O           &kp Y      &kp K
-                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &lt SYMBL SPACE &lt RAISE ENTER &mt LALT M_TMUX
+    &kp W       &kp F      &kp M         &kp P         &kp V          &kp FSLH  &kp DOT         &kp Q           &kp J      &kp Z
+    &hm LCTRL R &hm LALT S &hm LGUI N    &hm LSFT T    &kp G          &kp COMMA &hm RSFT A      &hm RGUI E      &hm RALT I &hm RCTRL H
+    &kp X       &kp C      &kp L         &kp D         &kp B          &kp SEMI  &kp U           &kp O           &kp Y      &kp K
+                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &symnum   &lt RAISE ENTER &mt LALT M_TMUX
             >;
         };
 
@@ -159,10 +159,10 @@
 // ------------| Esc | Tab |BkSpc|     |Space|Enter| Tmux|------------
 //             -------------------     -------------------
             bindings = <
-    &kp W       &kp L      &kp Y         &kp P         &kp B          &kp Z           &kp F           &kp O           &kp U      &kp SEMI
-    &hm LCTRL C &hm LALT R &hm LGUI S    &hm LSFT T    &kp G          &kp M           &hm RSFT N      &hm RGUI E      &hm RALT I &hm RCTRL A
-    &kp Q       &kp J      &kp V         &kp D         &kp K          &kp X           &kp H           &kp FSLH        &kp COMMA  &kp DOT
-                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &lt SYMBL SPACE &lt RAISE ENTER &mt LALT M_TMUX
+    &kp W       &kp L      &kp Y         &kp P         &kp B          &kp Z   &kp F           &kp O           &kp U      &kp SEMI
+    &hm LCTRL C &hm LALT R &hm LGUI S    &hm LSFT T    &kp G          &kp M   &hm RSFT N      &hm RGUI E      &hm RALT I &hm RCTRL A
+    &kp Q       &kp J      &kp V         &kp D         &kp K          &kp X   &kp H           &kp FSLH        &kp COMMA  &kp DOT
+                           &mt LCTRL ESC &lt LOWER TAB &mt LSHFT BSPC &symnum &lt RAISE ENTER &mt LALT M_TMUX
             >;
         };
 
